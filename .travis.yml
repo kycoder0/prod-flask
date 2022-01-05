@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-  - echo hello
+  - docker build -t trevdev0/flask-app:latest
