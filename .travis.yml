@@ -3,5 +3,7 @@ language: python
 services:
   - docker
 
+before_script: cd app
 script:
-  - docker build -t trevdev0/flask-app:latest
+  - docker build -t trevdev0/flask-app:latest .
+  - docker push trevdev0/flask-app:latest
