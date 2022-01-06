@@ -8,6 +8,6 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-EXPOSE 8080
+EXPOSE 5000
 
-CMD ["uwsgi", "--ini", "wsgi.ini"]
+CMD ["uwsgi", "--socket", "0.0.0.0:5000", "--protocol=http", "-w", "wsgi:main.py"]
