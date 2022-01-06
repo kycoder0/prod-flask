@@ -1,0 +1,10 @@
+language: python
+
+services:
+  - docker
+
+before_script: cd app
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t trevdev0/flask-app:latest .
+  - docker push $DOCKER_USERNAME/flask-app:latest
