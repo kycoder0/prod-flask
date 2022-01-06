@@ -5,12 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: flask
-  replicas: 2
+      app: flask-app
+  replicas: 1
   template:
     metadata:
       labels:
-        app: flask
+        app: flask-app
     spec:
       containers:
         - name: flask-app
@@ -28,5 +28,6 @@ spec:
   ports:
     - port: 5000
       targetPort: 5000
+      name: flask
   selector:
-    app: flask
+    app: flask-app
